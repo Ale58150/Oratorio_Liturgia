@@ -6,6 +6,7 @@
     { "src": "portafolio/**", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "^/$", "dest": "/cliente/PaginaInicio.php" }
+    { "src": "^/$", "dest": "/cliente/PaginaInicio.php" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
