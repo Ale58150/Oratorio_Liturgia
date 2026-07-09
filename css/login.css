@@ -1,0 +1,74 @@
+/* Fondo con degradado azul a amarillo */
+body {
+    background: linear-gradient(135deg, #dbe307, #04099b);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Caja del formulario */
+.col-md-5 {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+h2 {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+/* Logo */
+.logo-form {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo-form:hover {
+    transform: scale(1.1);
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.3);
+}
+
+/* Botón */
+.btn-primary {
+    background-color: #0056b3;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+}
+
+/* Texto de enlaces */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste del párrafo inferior */
+p.mb-0 {
+    font-size: 14px;
+}
+
+
+
