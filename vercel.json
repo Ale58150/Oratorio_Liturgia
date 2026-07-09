@@ -5,6 +5,6 @@
     }
   },
   "rewrites": [
-    { "source": "/", "destination": "/cliente/PaginaInicio.php" }
+    { "source": "/", "destination": "/cliente/login.php" }
   ]
 }
