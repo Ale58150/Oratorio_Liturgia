@@ -1,13 +1,12 @@
 <?php
 // Configuración de la base de datos
-$servername = getenv('DB_HOST') ?: 'localhost';
-$username   = getenv('DB_USER') ?: 'root';
-$password   = getenv('DB_PASS') ?: '1234';
-$dbname     = getenv('DB_NAME') ?: 'oratorio';
-$dbport     = getenv('DB_PORT') ?: 3306;
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+$dbname = "oratorio";
 
 // Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname, $dbport);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
 if ($conn->connect_error) {
