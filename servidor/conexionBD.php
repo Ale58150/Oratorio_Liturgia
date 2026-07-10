@@ -4,9 +4,8 @@
 //if ($conexion->connect_error) {
 //die("Error de conexión: " . $conexion->connect_error);
 //}
-<?php
-<?php
 
+<?php
 $host = getenv('MYSQLHOST');
 $puerto = (int) getenv('MYSQLPORT');
 $base = getenv('MYSQLDATABASE');
