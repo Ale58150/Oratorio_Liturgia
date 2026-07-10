@@ -6,7 +6,7 @@
 //}
 <?php
 $host = getenv('containers-us-west-123.railway.app');
-$puerto = getenv('6543');
+$puerto = getenv('3306');
 $base = getenv('railway');
 $usuario = getenv('root');
 $password = getenv('xxxxx');
