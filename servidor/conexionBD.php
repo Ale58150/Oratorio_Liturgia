@@ -5,11 +5,11 @@
 //die("Error de conexión: " . $conexion->connect_error);
 //}
 <?php
-$host = getenv('MYSQLHOST');
-$puerto = getenv('MYSQLPORT');
-$base = getenv('MYSQLDATABASE');
-$usuario = getenv('MYSQLUSER');
-$password = getenv('MYSQLPASSWORD');
+$host = getenv('containers-us-west-123.railway.app');
+$puerto = getenv('6543');
+$base = getenv('railway');
+$usuario = getenv('root');
+$password = getenv('xxxxx');
 
 $conexion = new mysqli($host, $usuario, $password, $base, (int)$puerto);
 
