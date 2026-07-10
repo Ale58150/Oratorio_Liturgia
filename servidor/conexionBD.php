@@ -5,17 +5,21 @@
 //die("Error de conexión: " . $conexion->connect_error);
 //}
 
-$host = getenv('MYSQLHOST');
-$puerto = getenv('MYSQLPORT');
-$base = getenv('MYSQLDATABASE');
-$usuario = getenv('MYSQLUSER');
-$password = getenv('MYSQLPASSWORD');
+echo "<pre>";
+echo "MYSQLHOST: ";
+var_dump(getenv('MYSQLHOST'));
 
-$conexion = new mysqli($host, $usuario, $password, $base, (int)$puerto);
+echo "MYSQLPORT: ";
+var_dump(getenv('MYSQLPORT'));
 
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
+echo "MYSQLDATABASE: ";
+var_dump(getenv('MYSQLDATABASE'));
 
-$conexion->set_charset("utf8");
+echo "MYSQLUSER: ";
+var_dump(getenv('MYSQLUSER'));
+
+echo "MYSQLPASSWORD: ";
+var_dump(getenv('MYSQLPASSWORD'));
+
+exit;
 ?>
