@@ -5,17 +5,21 @@
 //die("Error de conexión: " . $conexion->connect_error);
 //}
 <?php
-$host = getenv('containers-us-west-123.railway.app');
-$puerto = getenv('3306');
-$base = getenv('railway');
-$usuario = getenv('root');
-$password = getenv('xxxxx');
+<?php
 
-$conexion = new mysqli($host, $usuario, $password, $base, (int)$puerto);
+$host = getenv('MYSQLHOST');
+$puerto = (int) getenv('MYSQLPORT');
+$base = getenv('MYSQLDATABASE');
+$usuario = getenv('MYSQLUSER');
+$password = getenv('MYSQLPASSWORD');
+
+$conexion = new mysqli($host, $usuario, $password, $base, $puerto);
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
 $conexion->set_charset("utf8");
+
+
 ?>
