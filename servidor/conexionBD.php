@@ -5,21 +5,18 @@
 //die("Error de conexión: " . $conexion->connect_error);
 //}
 
+
+
 echo "<pre>";
-echo "MYSQLHOST: ";
+
+echo "getenv():\n";
 var_dump(getenv('MYSQLHOST'));
 
-echo "MYSQLPORT: ";
-var_dump(getenv('MYSQLPORT'));
+echo "\n_ENV:\n";
+var_dump($_ENV);
 
-echo "MYSQLDATABASE: ";
-var_dump(getenv('MYSQLDATABASE'));
-
-echo "MYSQLUSER: ";
-var_dump(getenv('MYSQLUSER'));
-
-echo "MYSQLPASSWORD: ";
-var_dump(getenv('MYSQLPASSWORD'));
+echo "\n_SERVER:\n";
+var_dump($_SERVER['MYSQLHOST'] ?? null);
 
 exit;
 ?>
