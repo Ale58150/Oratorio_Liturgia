@@ -1,22 +1,13 @@
 {
-<<<<<<< HEAD
   "functions": {
     "**/*.php": {
       "runtime": "vercel-php@0.7.4"
     }
   },
   "rewrites": [
-    { "source": "/", "destination": "/cliente/login.php" }
-=======
-  "builds": [
-    { "src": "**/*.php", "use": "vercel-php@0.7.4" },
-    { "src": "css/**", "use": "@vercel/static" },
-    { "src": "js/**", "use": "@vercel/static" },
-    { "src": "portafolio/**", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "^/$", "dest": "/cliente/PaginaInicio.php" },
-    { "src": "/(.*)", "dest": "/$1" }
->>>>>>> 7c4bb814aec246cdcc0962ad3146c8c39248063a
+    {
+      "source": "/",
+      "destination": "/cliente/login.php"
+    }
   ]
 }
