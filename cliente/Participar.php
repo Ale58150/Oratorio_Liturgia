@@ -104,7 +104,7 @@
                         <div class="mb-3">
                             <i class="bi bi-calendar-event text-warning fs-1"></i>
                         </div>
-                        <h5 class="card-title">Formulario de Eventos</h5>
+                        <h5 class="card-title">Nuestros Eventos</h5>
                         <p class="card-text">
                             Inscríbase y registre su participación en eventos y encuentros
                             organizados por el Oratorio Universitario.
