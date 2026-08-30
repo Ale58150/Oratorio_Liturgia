@@ -60,7 +60,6 @@ $usuario_correo = htmlspecialchars(
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -68,7 +67,7 @@ $usuario_correo = htmlspecialchars(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Oratorio y Liturgia</title>
-    <link rel="shortcut icon" href="../assets/img/logo.jpg">
+    <link rel="shortcut icon" href="../portafolio/img/logo.jpg">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -90,97 +89,7 @@ $usuario_correo = htmlspecialchars(
             --degradado-inferior: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
         }
 
-        /* ============================================================
-        1. LIMPIEZA DE CONTENEDORES (Adiós al gris de Bootstrap)
-        ============================================================ */
-        .hero-carousel,
-        .hero-carousel .carousel-inner,
-        .hero-carousel .carousel-item,
-        .carousel:not(.hero-carousel),
-        .carousel:not(.hero-carousel) .carousel-inner,
-        .carousel:not(.hero-carousel) .carousel-item {
-            background-color: var(--bg-puro) !important;
-            border: none;
-        }
 
-        /* ============================================================
-        2. PRIMER CARRUSEL (Hero Principal - PC Póster Gigante)
-        ============================================================ */
-        .hero-carousel .hero-img {
-            width: 100% !important;
-            /* ¡El secreto del póster! La altura dicta sus propias reglas en PC */
-            height: auto !important;
-            min-height: 97vh !important;
-            object-fit: cover !important;
-            object-position: center top;
-        }
-
-        .hero-carousel .carousel-item::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: var(--degradado-inferior);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .hero-carousel .carousel-caption {
-            position: absolute;
-            bottom: 5%;
-            left: 0;
-            right: 0;
-            background: transparent;
-            text-align: center;
-            padding: 15px;
-            z-index: 2;
-        }
-
-        .hero-carousel .custom-caption h1 {
-            font-size: clamp(1.4rem, 4vw, 2.5rem);
-            color: var(--texto-blanco);
-            margin-bottom: 6px;
-            text-shadow: var(--sombra-fuerte);
-        }
-
-        .hero-carousel .custom-caption .lead {
-            font-size: clamp(0.85rem, 2vw, 1.1rem);
-            color: var(--texto-gris-claro);
-            margin-bottom: 12px;
-            text-shadow: var(--sombra-suave);
-        }
-
-        .hero-carousel .custom-caption .btn {
-            font-size: clamp(0.8rem, 1.5vw, 1rem);
-            padding: 8px 16px;
-        }
-
-        /* ============================================================
-        3. SEGUNDO CARRUSEL (Afiches Limpios y sin bordes grises)
-        ============================================================ */
-        .carousel:not(.hero-carousel),
-        .carousel:not(.hero-carousel) .carousel-inner,
-        .carousel:not(.hero-carousel) .carousel-item {
-            background: transparent !important;
-            background-color: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            text-align: center;
-        }
-
-        .carousel:not(.hero-carousel) .carousel-item img {
-            width: auto !important;
-            max-width: 100% !important;
-            height: auto !important;
-            max-height: clamp(350px, 60vh, 650px) !important;
-            object-fit: contain !important;
-            margin: 0 auto !important;
-            border-radius: 8px !important;
-            background: transparent !important;
-        }
-
-        .carousel:not(.hero-carousel) .carousel-indicators {
-            display: none !important;
-        }
 
         /* ============================================================
         4. INTERFAZ FLOTANTE (Redes y Botones)
@@ -285,7 +194,7 @@ $usuario_correo = htmlspecialchars(
             .hero-carousel .hero-img {
                 height: 230px !important;
                 min-height: unset !important;
-                border-radius: 10px !important;
+                border-radius: 0px !important;
             }
 
             .carousel-indicators {
@@ -297,6 +206,17 @@ $usuario_correo = htmlspecialchars(
             .carousel-inner {
                 padding-top: 0 !important;
                 margin-top: 0 !important;
+                height: 230px !important;
+            }
+
+            .carousel-item {
+                height: 230px !important;
+            }
+
+            .carousel-item .hero-img {
+                height: 230px !important;
+                width: 100% !important;
+                object-fit: cover;
             }
 
             section {
@@ -485,75 +405,185 @@ $usuario_correo = htmlspecialchars(
         </div>
     </div>
 
-    <!--CAROUSEL - MEJORADO PARA MÓVILES Y EXPANSIBLE EN PC -->
-    <section class="hero-carousel container-fluid p-0">
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <!-- =========================================================
+     CAROUSEL PRINCIPAL
+     ========================================================= -->
+
+    <link rel="stylesheet" href="../css/carousel.css">
+
+    <section class="hero-carousel p-0">
+
+        <div id="heroCarousel"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+            data-bs-interval="5000">
+
+            <!-- =====================================================
+             INDICADORES
+             ===================================================== -->
+
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+
+                <button type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1">
+                </button>
+
+                <button type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2">
+                </button>
+
+                <button type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3">
+                </button>
+
+                <button type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4">
+                </button>
+
             </div>
+
+
+            <!-- =====================================================
+             ÚNICO CAROUSEL INNER
+             ===================================================== -->
+
             <div class="carousel-inner">
 
-                <!-- SLIDE 1 -->
-                <div class="carousel-item active">
+                <!-- =================================================
+                 SLIDE 1
+                 ================================================= -->
+
+                <div class="carousel-item active position-relative"
+                    onmouseenter="this.querySelector('.btn-leer').classList.remove('d-none')"
+                    onmouseleave="this.querySelector('.btn-leer').classList.add('d-none')">
 
                     <img src="../portafolio/img/carousel/img1.jpg"
                         class="d-block w-100 hero-img"
-                        alt="Oratorio">
+                        alt="Oratorio y Liturgia">
 
-                    <div class="carousel-caption custom-caption" style="left: 50%; transform:translateX(-50%)">
-
-                    <h1 class="display-4 fw-bold">Este espacio es para ti</h1>
-                    <p class="lead">Un espacio de fe, comunidad y crecimiento espiritual.</p>
-
-                        <!-- BOTÓN CENTRADO ABAJO -->
-                        <a href="../cliente/Contacto.php"
-                            class="btn btn-success rounded-pill px-4 position-absolute start-50 translate-middle-x">Leer Más</a>
-                    </div>
+                    <!-- BOTÓN -->
+                    <a href="../cliente/detalle_slider.php?id=1"
+                        class="btn btn-success rounded-pill px-4 py-2 shadow fw-semibold fs-5 position-absolute start-50 translate-middle-x d-none btn-leer"
+                        style="bottom: 50px; z-index: 10;">
+                        Leer Más
+                    </a>
                 </div>
 
 
-                <!-- SLIDE 2 -->
-                <div class="carousel-item">
-                    <img src="../portafolio/img/carousel/img2.jpg" class="d-block w-100 hero-img" alt="Eventos">
-                    <div class="carousel-caption custom-caption" style="left: 50%; transform:translateX(-50%)">
-                        <h1 class="display-4 fw-bold">Reuniones Comunitarias</h1>
-                        <p class="lead">Participa en encuentros de fe y amistad.</p>
-                        <a href="#eventos" class="btn btn-warning rounded-pill px-4">Ver Eventos</a>
-                    </div>
+                <!-- =================================================
+                 SLIDE 2
+                 ================================================= -->
+
+                <div class="carousel-item position-relative"
+                    onmouseenter="this.querySelector('.btn-leer').classList.remove('d-none')"
+                    onmouseleave="this.querySelector('.btn-leer').classList.add('d-none')">
+
+                    <img src="../portafolio/img/carousel/img4.jpg"
+                        class="d-block w-100 hero-img"
+                        alt="Reuniones Comunitarias">
+
+                    <!-- BOTÓN -->
+                    <a href="../cliente/detalle_slider.php?id=2"
+                        class="btn btn-danger rounded-pill px-4 py-2 shadow fw-semibold fs-5 position-absolute start-50 translate-middle-x d-none btn-leer"
+                        style="bottom: 50px; z-index: 10;">
+                        Leer Más
+                    </a>
                 </div>
 
-                <!-- SLIDE 3 -->
-                <div class="carousel-item">
-                    <img src="../portafolio/img/carousel/img1.jpg" class="d-block w-100 hero-img" alt="Formación">
-                    <div class="carousel-caption custom-caption" style="left: 50%; transform:translateX(-50%)">
-                        <h1 class="display-4 fw-bold">Formación Sacramental</h1>
-                        <p class="lead">Fortalece tu vida espiritual.</p>
-                        <a href="#formacion" class="btn btn-danger rounded-pill px-4">Más Información</a>
-                    </div>
+                <!-- =================================================
+                 SLIDE 3
+                 ================================================= -->
+
+                <div class="carousel-item position-relative"
+                    onmouseenter="this.querySelector('.btn-leer').classList.remove('d-none')"
+                    onmouseleave="this.querySelector('.btn-leer').classList.add('d-none')">
+
+                    <img src="../portafolio/img/carousel/img2.jpg"
+                        class="d-block w-100 hero-img"
+                        alt="Formación Sacramental">
+
+                    <!-- BOTÓN -->
+                    <a href="../cliente/detalle_slider.php?id=3"
+                        class="btn btn-primary rounded-pill px-4 py-2 shadow fw-semibold fs-5 position-absolute start-50 translate-middle-x d-none btn-leer"
+                        style="bottom: 50px; z-index: 10;">
+                        Leer Más
+                    </a>
                 </div>
-                <!-- SLIDE 4 -->
-                <div class="carousel-item">
-                    <img src="../portafolio/img/carousel/img3.jpg" class="d-block w-100 hero-img" alt="Cultura">
-                    <div class="carousel-caption custom-caption" style="left: 50%; transform:translateX(-50%)">
-                        <h1 class="display-4 fw-bold">Eventos Culturales</h1>
-                        <p class="lead">Vive nuestras tradiciones y cultura.</p>
-                        <a href="#cultura" class="btn btn-info rounded-pill px-4">Explorar</a>
-                    </div>
+
+                <!-- =================================================
+                 SLIDE 4
+                 ================================================= -->
+
+                <div class="carousel-item position-relative"
+                    onmouseenter="this.querySelector('.btn-leer').classList.remove('d-none')"
+                    onmouseleave="this.querySelector('.btn-leer').classList.add('d-none')">
+
+                    <img src="../portafolio/img/carousel/img3.jpg"
+                        class="d-block w-100 hero-img"
+                        alt="Eventos Culturales">
+
+                    <!-- BOTÓN -->
+                    <a href="../cliente/detalle_slider.php?id=4"
+                        class="btn btn-warning rounded-pill px-4 py-2 shadow fw-semibold fs-5 position-absolute start-50 translate-middle-x d-none btn-leer"
+                        style="bottom: 50px; z-index: 10;">
+                        Leer Más
+                    </a>
                 </div>
             </div>
-            <!-- CONTROLES / FLECHAS -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
+
+
+            <!-- =====================================================
+             FLECHA ANTERIOR
+             ===================================================== -->
+
+            <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"
+                    aria-hidden="true">
+                </span>
+
+                <span class="visually-hidden">
+                    Anterior
+                </span>
+
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
+
+
+            <!-- =====================================================
+             FLECHA SIGUIENTE
+             ===================================================== -->
+
+            <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"
+                    aria-hidden="true">
+                </span>
+
+                <span class="visually-hidden">
+                    Siguiente
+                </span>
+
             </button>
+
+
         </div>
+
     </section>
 
 
@@ -573,27 +603,27 @@ $usuario_correo = htmlspecialchars(
                         viven experiencias que transforman vidas y fortalecen la comunidad.
                     </p>
 
-                    <!-- Botones -->
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="../cliente/Calendario.php" class="btn btn-danger btn-lg rounded-pill px-4 shadow-sm">
-                            <i class="fas fa-calendar-alt me-2"></i>
-                            Ver actividades
-                        </a>
+                    <!-- Botones centrados -->
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <!-- Conócenos -->
+                        <a href="https://www.youtube.com/watch?v=RpIq4r9UJtw"
+                            target="_blank"
+                            class="btn btn-outline-secondary btn-lg rounded-pill px-4 shadow-sm">
 
-                        <a href="https://www.youtube.com/watch?v=RpIq4r9UJtw" class="btn btn-outline-success btn-lg rounded-pill px-4 shadow-sm">
                             <i class="fas fa-circle-play me-2"></i>
                             Conócenos
+
                         </a>
 
-                        <!--Ver Noticias -->
-                        <a href="#" class="btn btn-primary btn-lg rouded-pill px-4 shadow-sm"
-                            class="btn btn-outline-primary btn-lg rounded-pill px-4">
+                        <!-- Ver Noticias -->
+                        <a href="#"
+                            class="btn btn-outline-danger btn-lg rounded-pill px-4 shadow-sm">
 
                             <i class="fas fa-newspaper me-2"></i>
                             Ver Noticias
-
                         </a>
                     </div>
+
 
                     <!-- Mini estadísticas -->
                     <div class="row mt-5 g-4 text-center">
@@ -815,14 +845,49 @@ $usuario_correo = htmlspecialchars(
                 </div>
             </div>
 
-            <!-- BOTÓN GIGANTE DE PARTICIPACIÓN -->
+            <!-- BOTONES DE ACCIÓN PRINCIPALES -->
+
             <div class="row mb-5 text-center">
                 <div class="col-12">
-                    <a href="../cliente/Participar.php" class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-lg fs-5 fw-bold transition-all hover-scale">
-                        <i class="fas fa-rocket me-2"></i> ¡Quiero Participar!
-                    </a>
+
+                    <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+
+                        <!-- BOTÓN PARTICIPAR -->
+                        <a href="../cliente/Participar.php"
+                            class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-lg fw-bold">
+                            <i class="fas fa-rocket me-2"></i>
+                            ¡Quiero Participar!
+                        </a>
+
+                        <!-- BOTÓN ACTIVIDADES -->
+                        <a href="#actividades"
+                            class="btn btn-success btn-lg rounded-pill px-5 py-3 shadow-lg fw-bold">
+                            <i class="fas fa-calendar-check me-2"></i>
+                            Ver Actividades
+                        </a>
+
+                        <!-- BOTÓN EVENTOS -->
+                        <a href="#eventos"
+                            class="btn btn-danger btn-lg rounded-pill px-5 py-3 shadow-lg fw-bold">
+                            <i class="fas fa-calendar-days me-2"></i>
+                            Ver Eventos
+                        </a>
+
+                        <!-- BOTÓN SERVICIOS -->
+                        <a href="#servicios-espirituales"
+                            class="btn btn-warning btn-lg rounded-pill px-5 py-3 shadow-lg fw-bold text-dark">
+                            <i class="fas fa-hands-praying me-2"></i>
+                            Servicios
+                        </a>
+
+                    </div>
+
                 </div>
+               
+
             </div>
+
+
 
             <!-- VIDEOS MODERNOS -->
             <div class="row align-items-center g-5">
